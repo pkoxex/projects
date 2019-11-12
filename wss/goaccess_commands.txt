@@ -1,0 +1,13 @@
+goaccess /var/log/apache2/access.log -o /var/www/html/report.html --real-time-html --log-format=COMBINED --ws-url=wss://www.newpress.gr:7890 --ssl-cert=/etc/letsencrypt/live/newpress.gr/fullchain.pem --ssl-key=/etc/letsencrypt/live/newpress.gr/privkey.pem
+
+goaccess /var/log/apache2/access.log -o /var/www/html/report.html --real-time-html --log-format=COMBINED --ws-url=wss://www.newpress.gr:7890
+
+
+ ssh root@xxxxxx 'cat /var/log/apache2/access.log' | goaccess /var/log/apache2/access.log -o /var/www/html/report.html --real-time-html --log-format=COMBINED --ws-url=wss://www.newpress.gr:7890
+
+
+failed: Error in connection establishment: net::ERR_CONNECTION_TIMED_OUT
+
+failed: WebSocket opening handshake timed out
+
+failed: Error during WebSocket handshake: Unexpected response code: 200
